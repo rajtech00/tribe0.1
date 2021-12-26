@@ -1,0 +1,41 @@
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>date range picker</title>
+</head>
+<body></body>
+<h2> JSON DATA</h2>
+<p id="data"></p>
+<script type="text/javascript">
+    
+    fetch('https://www.gov.uk/bank-holidays.json',{ mode:"cors"})
+    .then(function(response) {
+        
+        return response.json();
+    })
+    .then(function (data) {
+      for(var i=0; i<length; i++)
+      {
+        document.getElementById["data"].innerHTML +=
+        data[i].id + "=>" + data[i].title + " " + data[i].date + " " +data[i].notes + "<br />";
+        }
+    })
+     
+      .catch(function(err) {
+       console.log(err);
+    })
+    .catch(function(data) {
+       console.log(data);
+    });
+    
+    
+</script> 
+</html>
